@@ -17,6 +17,9 @@ class Character():
             return False
         else:
             return True
+    
+    def death(self):
+        print(f"{self.name} is 💀")
 
     def print_status(self):
         print(f"{self.name} has {self.health} health.")

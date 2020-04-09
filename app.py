@@ -9,9 +9,11 @@ In this simple RPG game, the hero fights the goblin. He has the options to:
 from lib.hero import Hero
 from lib.goblin import Goblin
 from lib.zombie import Zombie
+from lib.medic import Medic
+from lib.shadow import Shadow
 
 Hero = Hero("Lancelot")
-Enemy = Zombie("Reggie")
+Enemy = Goblin("Goblin")
 
 def main():
 
@@ -42,9 +44,9 @@ def main():
             Enemy.attack(Hero)
             Hero.is_alive()
         else:
-            print(f"{Enemy.name} is 💀")
+            Enemy.death()
 
         if not Hero.is_alive():
-            print(f"{Hero.name} is 💀")
+            Hero.death()
             
 main()
