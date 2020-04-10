@@ -6,6 +6,7 @@ class Hero(Character):
         super().__init__(name, 100, 5, 30)
         self.armor = 0
         self.evade = 0
+        self.inventory = []
 
     def attack(self, target):
         double_damage = random.random() <= 0.2
@@ -15,7 +16,7 @@ class Hero(Character):
                 self.power *= 2
                 super().attack(target)
                 double_damage = False
-            self.power = 5
+            self.power = self.power
         else:
             super().attack(target)
     
@@ -34,7 +35,23 @@ class Hero(Character):
         print(f"{self.name} has {self.coins} coins.")
         print(f"{self.name} has {self.armor} defense.")
         print(f"{self.name} has {self.evade} escapability.")
+        if self.inventory == []:
+            print(f"{self.name} has 0 items in inventory.")
+        else:    
+            for each_item in self.inventory:
+                print(f"{self.name} has {each_item.name} in inventory.")
+    
+    def stash(self, item):
+        self.inventory.append(item)
+        print(f"{self.name} now has {item.name} in his pouch.")
 
     def buy(self, item):
         self.coins -= item.cost
-        item.apply(self)
+        if item.name == "Tonic" or item.name == "SuperTonic":
+            inp = input("Use now or use later? ")
+            if inp == "now":
+                item.apply(self)
+            else:
+                self.stash(item)
+        else:
+            item.apply(self)

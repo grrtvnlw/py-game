@@ -50,7 +50,7 @@ def main():
                 print(f"{Hero.name} has {Hero.coins} coins")
                 store_input = store_menu()
             elif store_input == "2":
-                shop(Hero)
+                store_input = shop(Hero)
                 # store_input = store_menu()
             elif store_input == "3":
                 print("Thanks for coming in. Stay safe out there.")
