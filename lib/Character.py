@@ -1,8 +1,9 @@
 class Character():
-    def __init__(self, name, health, power):
+    def __init__(self, name, health, power, coins=0):
         self.name = name
         self.health = health
         self.power = power
+        self.coins = coins
 
     def attack(self, target):
         print(f'{self.name} strikes {target.name}')
@@ -18,9 +19,12 @@ class Character():
         else:
             return True
     
-    def death(self):
+    def death(self, target):
         print(f"{self.name} is 💀")
+        target.coins += 5
+        print(f"{target.name} gains 5 coins.")
 
     def print_status(self):
         print(f"{self.name} has {self.health} health.")
         print(f"{self.name} has {self.power} power.")
+        

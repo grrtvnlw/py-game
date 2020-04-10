@@ -12,6 +12,11 @@ class Shadow(Character):
             super().receive_damage(how_many_points)
         else:
             super().receive_damage(how_many_points)
+
+    def death(self, target):
+        print(f"{self.name} is 💀")
+        target.coins += 8
+        print(f"{target.name} gains 8 coins.")
             
             
             

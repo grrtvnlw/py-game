@@ -2,4 +2,5 @@ from lib.Character import Character
 
 class Goblin(Character):
     def __init__(self, name):
-        super().__init__(name, 50, 2)
+        super().__init__(name, 10, 2)
+
