@@ -76,4 +76,3 @@ def shop(target):
                 target.buy(item)
             else:
                 print(f"You're broke! Go fight some enemies.")
-

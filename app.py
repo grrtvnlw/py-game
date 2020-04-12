@@ -51,7 +51,7 @@ def main():
                     print(f"{Hero.name} has {Hero.coins} coins")
                 elif store_input == "2":
                     shop(Hero)
-                elif store_input == "3":
+                else:
                     print("Thanks for coming in. Stay safe out there.")
                     break
         elif user_input == "4":
