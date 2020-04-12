@@ -65,7 +65,7 @@ def shop(target):
         for i in range(len(items)):
             item = items[i]
             print(f"{i + 1}. {item.name}. Buy {item.name} for {item.cost} coins.")
-        print("6. Back to the battle.\n")
+        print("6. Back to store menu.\n")
         in_store_input = int(input("> "))
         if in_store_input == 6:
             break

@@ -45,16 +45,15 @@ def main():
             Enemy.print_status()
             Hero.print_status()
         elif user_input == "3":
-            store_input = store_menu()
-            if store_input == "1":
-                print(f"{Hero.name} has {Hero.coins} coins")
+            while True:
                 store_input = store_menu()
-            elif store_input == "2":
-                store_input = shop(Hero)
-                # store_input = store_menu()
-            elif store_input == "3":
-                print("Thanks for coming in. Stay safe out there.")
-                main_menu()
+                if store_input == "1":
+                    print(f"{Hero.name} has {Hero.coins} coins")
+                elif store_input == "2":
+                    shop(Hero)
+                elif store_input == "3":
+                    print("Thanks for coming in. Stay safe out there.")
+                    break
         elif user_input == "4":
             print("Thanks for playing! Farewell.")
             break
