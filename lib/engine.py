@@ -1,9 +1,9 @@
 def main_menu():
     m_menu = """
-    1. Fight Enemy
+    1. Battle!
     2. Do Nothing
     3. Visit Store
-    4. Flee
+    4. Quit
     >
     """
     print(m_menu)
@@ -76,3 +76,4 @@ def shop(target):
                 target.buy(item)
             else:
                 print(f"You're broke! Go fight some enemies.")
+

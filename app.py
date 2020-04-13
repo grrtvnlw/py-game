@@ -14,6 +14,7 @@ from lib.medic import Medic
 from lib.shadow import Shadow
 from lib.wizard import Wizard
 from lib.engine import main_menu, store_menu, shop
+from lib.battle import do_battle
 
 Hero = Hero("Lancelot")
 Enemy = Zombie("Reggie")
@@ -26,24 +27,11 @@ def main():
         user_input = main_menu()
         #if user_input == "1":
         if user_input == "1":
-            # Hero attacks enemy
-            Hero.attack(Enemy)
-            Enemy.is_alive()
-
-            if Enemy.is_alive():
-            # Enemy attacks hero
-                Enemy.attack(Hero)
-                Hero.is_alive()
-            else:
-                Enemy.death(Hero)
-            if not Hero.is_alive():
-                Hero.death()
+            do_battle(Hero, Enemy)
         elif user_input == "2":
             # Hero does nothing, enemy attacks
             Enemy.attack(Hero)
             Hero.is_alive()
-            Enemy.print_status()
-            Hero.print_status()
         elif user_input == "3":
             while True:
                 store_input = store_menu()
