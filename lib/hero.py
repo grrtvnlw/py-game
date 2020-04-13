@@ -43,7 +43,6 @@ class Hero(Character):
     
     def stash(self, item):
         self.inventory.append(item)
-        print(f"{self.name} now has {item.name} in his pouch.")
 
     def buy(self, item):
         self.coins -= item.cost
@@ -53,5 +52,6 @@ class Hero(Character):
                 item.apply(self)
             else:
                 self.stash(item)
+                print(f"{item.name} has been stashed.")
         else:
             item.apply(self)

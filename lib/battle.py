@@ -47,9 +47,23 @@ def do_battle(hero, enemy):
         elif battle_input == "3":
             if hero.inventory == []:
                 print(f"{hero.name} has 0 items in inventory.")
-            else:    
-                for each_item in hero.inventory:
-                    print(f"{hero.name} has {each_item.name} in inventory.")
+            else:
+                while len(hero.inventory) != 0:  
+                    for index in range(len(hero.inventory)):
+                        print(f"{hero.name} has {index}: {hero.inventory[index].name} in inventory.")
+                    inv_input = input("Use item? ").lower()
+                    if inv_input == "y":
+                        item_input = int(input("Choose an item by its index number: "))
+                        if hero.inventory[item_input] in hero.inventory:
+                            hero.inventory[item_input].apply(hero)
+                            print(f"{hero.name} used {hero.inventory[item_input].name}!")
+                            del hero.inventory[item_input]
+                            hero.print_status()
+                        else:
+                            print("Double check your inventory!")
+                    else:
+                        break
+                    
         elif battle_input == "4":
             enemy.attack(hero)
         elif battle_input == "5":

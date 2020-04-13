@@ -33,7 +33,7 @@ class SuperTonic(Tonic):
     cost = 10
     name = "SuperTonic"
     def apply(self, target):
-        target.health += 10
+        target.health += 6
         print(f"{target.name}'s' health increased to {target.health}.")
 
 class Sword:
