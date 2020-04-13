@@ -13,10 +13,11 @@ class Hero(Character):
         if double_damage:
             while double_damage:
                 print(f"{self.name}'s power is doubled!")
+                original_power = self.power
                 self.power *= 2
                 super().attack(target)
                 double_damage = False
-            self.power = self.power
+            self.power = original_power
         else:
             super().attack(target)
     
